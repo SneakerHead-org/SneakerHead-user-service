@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   cicd:
-    uses: SneakerHead-org/SneakerHead-template/.github/workflows/ci_template.yml@main
+    uses: SneakerHead-org/SneakerHead-template/.github/workflows/cicd_template.yml@main
     with:
       service-name: sneakerhead-user-service
       sonar_project_key: SneakerHead-User-Service
