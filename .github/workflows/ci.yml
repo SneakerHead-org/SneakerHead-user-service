@@ -1,4 +1,4 @@
-name: CI - User Service
+name: CI/CD - User Service
 
 on:
   push:
@@ -11,11 +11,13 @@ permissions:
   packages: read
 
 jobs:
-  ci:
-    uses: SneakerHead-org/SneakerHead-template/.github/workflows/cicd_template.yml@main
+  cicd:
+    uses: SneakerHead-org/SneakerHead-template/.github/workflows/ci_template.yml@main
     with:
       service-name: sneakerhead-user-service
       sonar_project_key: SneakerHead-User-Service
+      helm-service-name: user-service
+      chart-path: helm/sneakerhead
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
@@ -27,3 +29,6 @@ jobs:
       SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
       SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
       EMAIL_TO: ${{ secrets.EMAIL_TO }}
+      APP_ID: ${{ secrets.APP_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
+      MANIFEST_REPO: ${{ secrets.MANIFEST_REPO }}
