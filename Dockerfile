@@ -1,4 +1,4 @@
-# sneakerhead/user-service/Dockerfile
+# sneakerhead/user-service/Dockerfile.
 
 # ── Stage 1: builder ──────────────────────────────
 FROM python:3.12-slim AS builder
